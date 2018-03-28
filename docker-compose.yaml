@@ -2,6 +2,14 @@ version: '2'
 services:
   dc-server:
     build: dc-server
+    command: [
+      "-dir:/opt/dc-server/",
+      "-userdir:/data/",
+      "-port:9000",
+      "-imageserverport:9001",
+      "-webserverport:80",
+      "-ip:0.0.0.0"
+      ]
     ports:
       - "80:80"
       - "9000:9000"
