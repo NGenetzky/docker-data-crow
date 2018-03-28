@@ -1,5 +1,5 @@
-# FROM resin/%%RESIN_MACHINE_NAME%%-openjdk:8-jdk
-FROM resin/nuc-openjdk:8-jdk
+FROM resin/%%RESIN_MACHINE_NAME%%-openjdk:8-jdk
+# FROM resin/nuc-openjdk:8-jdk
 
 # File can be obtained from the following location:
 # https://www.fosshub.com/Data-Crow.html/datacrow_4_2_2_server_zipped.zip
