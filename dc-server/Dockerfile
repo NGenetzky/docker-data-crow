@@ -7,16 +7,18 @@ COPY "datacrow_4_2_2_server_zipped.zip" \
 RUN unzip "/tmp/dc-server.zip" -d "/opt/" || true \
   && rm "/tmp/dc-server.zip"
 
+# TODO: Patch bug related to parsing userdir and dir.
+
 EXPOSE 80 9000 9001
 VOLUME /data/
+WORKDIR /tmp/
 ENTRYPOINT ["/usr/bin/java"]
 CMD [ "-Xmx512m", \
   "-jar", "/opt/dc-server/datacrow-server.jar", \
-  "-dir:/opt/dc-server", \
-  "-userdir:/data", \
+  "-dir:/opt/dc-server/", \
+  "-userdir:/data/", \
   "-port:9000", \
   "-imageserverport:9001", \
   "-webserverport:80", \
-  "-ip:0.0.0.0", \
-  ""]
+  "-ip:0.0.0.0" ]
 
