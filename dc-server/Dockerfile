@@ -12,10 +12,8 @@ RUN unzip "/tmp/dc-server.zip" -d "/opt/" || true \
 EXPOSE 80 9000 9001
 VOLUME /data/
 WORKDIR /tmp/
-ENTRYPOINT ["/usr/bin/java"]
-CMD [ "-Xmx512m", \
-  "-jar", "/opt/dc-server/datacrow-server.jar", \
-  "-dir:/opt/dc-server/", \
+ENTRYPOINT ["/usr/bin/java", "-Xmx512m", "-jar", "/opt/dc-server/datacrow-server.jar"]
+CMD [ "-dir:/opt/dc-server/", \
   "-userdir:/data/", \
   "-port:9000", \
   "-imageserverport:9001", \
