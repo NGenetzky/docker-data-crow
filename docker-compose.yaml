@@ -1,0 +1,13 @@
+version: '2'
+services:
+  dc-server:
+    build: dc-server
+    ports:
+      - "80:80"
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - "user-data:/data/:rw"
+volumes:
+  user-data:
+
