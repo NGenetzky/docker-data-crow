@@ -9,6 +9,9 @@ RUN unzip "/tmp/dc-server.zip" -d "/opt/" || true \
 
 # TODO: Patch bug related to parsing userdir and dir.
 
+COPY "./credentials.txt" \
+    "/opt/dc-server/datacrow.credentials"
+
 EXPOSE 80 9000 9001
 VOLUME /data/
 WORKDIR /tmp/
